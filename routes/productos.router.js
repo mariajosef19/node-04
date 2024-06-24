@@ -65,4 +65,4 @@ const producto = productos.find ((elemento) => elemento.id == req.params.id);
   res.json(deleteProducto)
 })
 
-module.exports = router;
+module.exports = router; //debe estar
