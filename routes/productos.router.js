@@ -1,16 +1,17 @@
 const express = require("express");
 const router = express.Router(); 
 
+const controller = require("..//controller/productos.controller")
+
+
 const productos = [
   { id: 1, nombre: "Producto Nro 1", stock: 10},
   { id: 2, nombre: "Producto Nro 2", stock: 5 },
   {id: 3, nombre: "Producto Nro 3", stock: 15}
 ]
 
-router.get("/", (req, res) => {
-// res.send("listado de productos"); nuestro servicio no debe recibir html, sino json
-  res.json({productos})
-});
+router.get("/", controller.index);
+
 
 router.get("/:id", (req, res) => {
   console.log(req.params.id);   //para recibir el parametro que le damos a la ruta
